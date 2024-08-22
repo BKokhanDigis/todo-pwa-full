@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Todo = require('../models/Todo');
 
-// Получить все задачи
+
 router.get('/todos', async (req, res) => {
   try {
     const todos = await Todo.find();
@@ -12,7 +12,7 @@ router.get('/todos', async (req, res) => {
   }
 });
 
-// Добавить новую задачу
+
 router.post('/todos', async (req, res) => {
   const todo = new Todo({
     title: req.body.title,
@@ -26,7 +26,7 @@ router.post('/todos', async (req, res) => {
   }
 });
 
-// Обновить задачу
+
 router.patch('/todos/:id', async (req, res) => {
   try {
     const todo = await Todo.findById(req.params.id);
@@ -43,7 +43,7 @@ router.patch('/todos/:id', async (req, res) => {
   }
 });
 
-// Удалить задачу
+
 router.delete('/todos/:id', async (req, res) => {
   const { id } = req.params;
 

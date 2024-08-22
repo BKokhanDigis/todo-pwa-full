@@ -15,7 +15,7 @@ const corsOptions = {
     }
   },
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // Если ваш фронтенд отправляет куки или аутентификационные данные
+  credentials: true, 
 };
 
 app.use(cors(corsOptions));
@@ -35,7 +35,7 @@ app.use('/api', todoRoutes);
 
 const mongoose = require('mongoose');
 
-// Подключение к MongoDB
+
 mongoose.connect('mongodb://localhost:27017/todo-app', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
